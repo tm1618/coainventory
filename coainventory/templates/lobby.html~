@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>City of Athens</title>
+	<style>
+		html, body {
+			background: black;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+</head>
+<body>
+<!-- update the presentation ID with your own presentation -->
+<!-- update the &delayms= with the time to show each slide (in milliseconds) -->
+<iframe id="presentFrame" src="https://docs.google.com/presentation/d/1cO21JjD8JaA6kn4_2lS7j-GFymTbapmlPR3qrlIrcZg/embed?start=true&loop=true&delayms=12000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</body>
+    
+    <script>
+		// update with the desired time to refresh the presentation (in minutes)
+		var refreshMinutes = 10;
+		
+		var timer=setInterval(function(){refreshFrame()}, refreshMinutes*60*1000);
+		function refreshFrame()
+		{
+			var iframe = document.getElementById('presentFrame');
+			var iframeURL = iframe.src;
+			iframe.src = iframeURL;
+		}
+	</script>
+</html>

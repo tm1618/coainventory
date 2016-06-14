@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="text-center">{{ title }}</h3>
+<table id="devicestable">
+    <thead>
+        <tr>
+            <th class="idColumn">ID</th>
+            <th class="userColumn">User</th>
+            <th class="hidecolumn dateColumn">Checked</th>
+            <th class="hidecolumn statusColumn">Status</th>
+            <th class="hidecolumn notesColumn" >Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for device in devices %}
+        <tr>
+            <td class="idcolumn"> <strong><a href="/device/edit/{{ device.id }}/"> {{ device.UniqueID }} </a> </strong></td>
+            <td class="userColumn"> {{ device.User }}</td>
+            <td class="hidecolumn dateColumn" > {{ device.Date|date:"SHORT_DATE_FORMAT" }}</td>
+            <td class="hidecolumn statusColumn" > {{ device.Status }} </td>
+            <td class="hidecolumn noteColumn" > {{ device.Notes|truncatewords:5}} </td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

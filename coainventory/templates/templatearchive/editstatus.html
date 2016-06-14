@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy StatusForm %}
+
+{% block content %}
+<div class="text-center">
+<h3>Edit Status Types</h3>
+
+<form action="" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input type="submit" name="submit" value="Submit">
+
+
+</form>
+    <br />
+{% for status in statuses %}
+
+<table border="1" class="text-center locationtable">
+
+    <tr>
+        <td style="width: 200px"> <a href="/status/edit/{{ status.id }}">{{ status }}</a></td>
+
+    </tr>
+
+</table>
+
+{% endfor %}
+    <br /><br />
+    <a href="/status/"><----Back to Status List </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="text-center">{{ status }}</h3>
+<table id="serverstable">
+    <thead>
+        <tr>
+            <th>Computer ID</th>
+            <th class="hidecolumn">User</th>
+            <th>Location</th>
+            <th class="hidecolumn servernotescolumn">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for device in devices %}
+        <tr>
+            <td class="idcolumn"><a href="/device/edit/{{ device.id }}/"> {{ device.UniqueID }} </a></td>
+            <td class="hidecolumn"> {{ device.User }}</td>
+            <td> {{ device.Location }}</td>
+            <td class="hidecolumn servernotescolumn"> {{ device.Notes|truncatewords:5 }} </td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

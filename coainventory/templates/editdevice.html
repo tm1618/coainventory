@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy DeviceForm %}
+
+{% block content %}
+<a class="btn btn-primary btn-arrow-left" href="/devices/">Back to Devices</a>
+<div class="row">
+<div class="col-lg-4 col-md-5">
+    <h3>{{ device.UniqueID }} <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#device_edit">Edit Device</button></h3>
+    <br />
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td><strong>Computer ID</strong></td>
+                <td>{{ device.UniqueID }}</td>
+            </tr>
+            <tr>
+                <td><strong>User</strong></td>
+                <td>{{ device.User }}</td>
+            </tr>
+            <tr>
+                <td><strong>Department</strong></td>
+                <td>{{ device.Department }}</td>
+            </tr>
+            <tr>
+                <td><strong>Location</strong></td>
+                <td>{{ device.Location }}</td>
+
+            <tr>
+                <td><strong>Type</strong></td>
+                <td>{{ device.Type }}</td>
+            </tr>
+            <tr>
+                <td><strong>OS</strong></td>
+                <td>{{ device.OS }}</td>
+            </tr>
+            <tr>
+                <td><strong>Date</strong></td>
+                <td>{{ device.Date }}</td>
+            </tr>
+            <tr>
+                <td><strong>Date</strong></td>
+                <td>{{ device.Status }}</td>
+            </tr>
+         <tr>
+                <td><strong>Notes</strong></td>
+                <td>{{ device.Notes }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br />
+</div>
+<div class="col-lg-8 col-md-9">
+    <div class="bordered">
+    <h3>Device History</h3>
+    <table class="table table-bordered" id="historytable">
+        <thead>
+            <tr>
+                <th>Changed</th>
+                <th class="hidecolumn">OS</th>
+                <th class="hidecolumn">Status</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in history %}
+            <tr>
+                <td><a href="/device/history/{{ i.history_id }}/">{{ i.history_date |date:"SHORT_DATE_FORMAT" }}</a> </td>
+                <td class="hidecolumn">{{ i.OS }}</td>
+                <td class="hidecolumn">{{ i.Status }}</td>
+                <td>{{ i.Notes|truncatewords:5 }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="device_edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Device</h4>
+      </div>
+      <div class="modal-body">
+          <form action="/device/edit/{{ device.id }}/" method="post">{% csrf_token %}
+
+            {{ form|crispy }}
+
+            <input type="submit" class="btn btn-primary updateBtn" name="submit" value="Update">
+            <button class="btn btn-primary deleteBtn"><a href="/device/delete/{{ device.id }}/" style="color:white">Delete Device</a></button>
+
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

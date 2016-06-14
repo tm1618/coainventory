@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy OSForm %}
+
+{% block content %}
+
+<div class="text-center">
+<h3>Edit OS Types</h3>
+
+<form action="" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input type="submit" name="submit" value="Submit">
+
+
+</form>
+    <br />
+{% for os in oses %}
+<table border="1" class="text-center locationtable">
+
+    <tr>
+        <td style="width: 200px"> <a href="/os/edit/{{ os.id }}">{{ os }}</a></td>
+
+    </tr>
+
+</table>
+
+{% endfor %}
+    <br /><br />
+    <a href="/os/"><----Back to OS List </a>
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--
+<div class="sortlist">
+            <li><a class="btnAll" href="#"><button class="btn btn-primary">ALL</button></a></li>
+            <li><a class="btnPD" href="#"><button class="btn btn-primary">PD</button></a></li>
+            <li><a class="btnMG" href="#"><button class="btn btn-primary">MG</button></a></li>
+            <li><a class="btnFD" href="#"><button class="btn btn-primary">FD</button></a></li>
+            <li><a class="btnCH" href="#"><button class="btn btn-primary">CH</button></a></li>
+            <li><a class="btnCC" href="#"><button class="btn btn-primary">CC</button></a></li>
+             <li><a class="btnHR" href="#"><button class="btn btn-primary">HR</button></a></li>
+            <li><a class="btnCA" href="#"><button class="btn btn-primary">CA</button></a></li>
+            <li><a class="btnUT" href="#"><button class="btn btn-primary">UT</button></a></li>
+
+
+
+    <li><a class="btnPW" href="#"><button class="btn btn-primary">PW</button></a></li>
+</div>
+-->
+<h3 class="text-center">Device List</h3>
+<table id="devicestable">
+    <thead>
+        <tr>
+            <th class="idColumn">ID</th>
+            <th class="userColumn">User</th>
+            <th class="hidecolumn dateColumn">Checked</th>
+            <th class="hidecolumn statusColumn">Status</th>
+            <th class="hidecolumn notesColumn" >Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for device in devices %}
+        <tr>
+            <td class="idcolumn"> <strong><a href="/device/edit/{{ device.id }}/"> {{ device.UniqueID }} </a> </strong></td>
+            <td class="userColumn"> {{ device.User }}</td>
+            <td class="hidecolumn dateColumn" > {{ device.Date|date:"SHORT_DATE_FORMAT" }}</td>
+            <td class="hidecolumn statusColumn" > {{ device.Status }} </td>
+            <td class="hidecolumn noteColumn" > {{ device.Notes|truncatewords:5}} </td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

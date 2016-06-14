@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<h2 class="text-center"> Device Detail Page </h2>
+<hr>
+<div class="col-md-6">
+<h4>Details -- <a href="/device/edit/{{ device.id }}/">Edit</a></h4>
+    <p><strong>ID:</strong> {{ device.UniqueID }} </p>
+    <p><strong>Type:</strong>  {{ device.Type }} </p>
+    <p><strong>OS:</strong> {{ device.OS }} </p>
+    <p><strong>Current User:</strong> {{ device.User }} </p>
+    <p><strong>Date last checked:</strong> {{ device.Date|date:"SHORT_DATE_FORMAT" }}</p>
+    <p><strong>Current Status:</strong> {{ device.Status }} </p>
+    <p><strong>Notes:</strong> {{ device.Notes }} </p>
+</div>
+<div class="clear"></div><br />
+
+<a href="/devices/"><------ Back to all Devices</a>
+
+
+{% endblock %}

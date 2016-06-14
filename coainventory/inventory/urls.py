@@ -1,0 +1,65 @@
+from django.conf.urls import url, patterns, include
+from views import alldevices, devicedetails, newdevice, editdevice, type, os, status, editstatus, edittype, editos\
+    , home, allPrinters, addprinter, editprinter, allServers, addserver, editserver, deletedevice, devicehistory\
+    , createticket, alltickets, ticketdetails, userTickets, closedTickets, unassignedTickets, device_set, navdepartments, \
+    server_set, status_set, servertype, editservertype, departments, editdepartments, changename, update, repair, inspect, \
+    replace, addport, editport, allports, addbuilding, editbuilding, buildingport, deleteport, deleteprinter, lobby
+
+
+urlpatterns = [
+    url(r'^$', home, name="home"),
+    url(r'^nav/$', navdepartments, name="navbar"),
+    url(r'^home/$', home, name="home"),
+    url(r'^repair/$', alldevices, name="alldevices"),
+    url(r'^replace/$', alldevices, name="alldevices"),
+    url(r'^inspect/$', alldevices, name="alldevices"),
+    url(r'^warranty/$', alldevices, name="alldevices"),
+    url(r'^update/$', alldevices, name="alldevices"),
+    url(r'^printers/$', allPrinters, name="allprinters"),
+    url(r'^printers/add/$', addprinter, name='addprinter'),
+    url(r'^printers/edit/(?P<printer_id>[0-9]+)/$', editprinter, name="editprinter"),
+    url(r'^printers/delete/(?P<printer_id>[0-9]+)/$', deleteprinter, name='deleteprinter'),
+    url(r'^device/history/(?P<history_id>[0-9]+)/$', devicehistory, name='devicehistory'),
+    url(r'^devices/$', alldevices, name="alldevices"),
+    url(r'^devices/by_department/(?P<department_code>\w+)/$', device_set, name="device_set"),
+    url(r'^servers/by_type/(?P<servertype_type>\w+)/$', server_set, name="server_set"),
+    url(r'^status/by_status/(?P<status_id>\w+)/$', status_set, name="status_set"),
+    url(r'^device/delete/(?P<device_id>[0-9]+)/$', deletedevice, name='deletedevice'),
+    url(r'^servers/$', allServers, name="allservers"),
+    url(r'^servers/add/$', addserver, name='addserver'),
+    url(r'^servers/edit/(?P<server_id>[0-9]+)/$', editserver, name="editserver"),
+    url(r'^details/(?P<device_id>[0-9]+)/$', devicedetails, name="details"),
+    url(r'^device/add/$', newdevice, name='newdevice'),
+    url(r'^device/edit/(?P<device_id>[0-9]+)/$', editdevice, name="editdevice"),
+    url(r'^devices/changename/$', changename, name="changename"),
+    url(r'^devices/update/$', update, name="update"),
+    url(r'^devices/repair/$', repair, name="repair"),
+    url(r'^devices/inspect/$', inspect, name="inspect"),
+    url(r'^devices/replace/$', replace, name="replace"),
+    url(r'^type/$', type, name='type'),
+    url(r'^type/edit/(?P<type_id>[0-9]+)/$', edittype, name="edittype"),
+    url(r'^os/$', os, name='os'),
+    url(r'^os/edit/(?P<os_id>[0-9]+)/$', editos, name="editos"),
+    url(r'^servertypes/$', servertype, name='servertype'),
+    url(r'^servertypes/edit/(?P<type_id>[0-9]+)/$', editservertype, name="editservertype"),
+    url(r'^departments/$', departments, name='departments'),
+    url(r'^departments/edit/(?P<type_id>[0-9]+)/$', editdepartments, name="editdepartments"),
+    url(r'^status/$', status, name='status'),
+    url(r'^status/edit/(?P<status_id>[0-9]+)/$', editstatus, name="editstatus"),
+    url(r'^ticket/create/$', createticket, name="createticket"),
+    url(r'^tickets/$', alltickets, name="alltickets"),
+    url(r'^tickets/unassigned$', unassignedTickets, name="unassignedTickets"),
+    url(r'^usertickets/$', userTickets, name="userTickets"),
+    url(r'^tickets/closed/$', closedTickets, name="closedTickets"),
+    url(r'^ticket/details/(?P<ticket_id>[0-9]+)/$', ticketdetails, name="ticketdetails"),
+    url(r'^ports/add/$', addport, name='addport'),
+    url(r'^ports/edit/(?P<ports_id>[0-9]+)/$', editport, name="editport"),
+    url(r'^ports/(?P<building_code>\w+)/$', buildingport, name="buildingport"),
+    url(r'^ports/delete/(?P<port_id>[0-9]+)/$', deleteport, name='deleteport'),
+    url(r'^ports/$', allports, name='allports'),
+    url(r'^building/add/$', addbuilding, name='addbuilding'),
+    url(r'^building/edit/(?P<building_id>[0-9]+)/$', editbuilding, name="editbuilding"),
+    url(r'^lobby/$', lobby, name="lobby"),
+
+
+]

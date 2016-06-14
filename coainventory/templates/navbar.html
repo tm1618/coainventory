@@ -1,0 +1,111 @@
+<div class="nav-side-menu">
+    <div class="brand">City of Athens IT</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="/home/">
+                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#computers" class="computers collapsed active">
+                  <a href="#"><i class="fa fa-desktop fa-lg"></i> Computers <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="computers">
+                    <li><a href="/devices/">All Computers</a></li>
+                    {% for department in departments %}
+                        <li><a href="/devices/by_department/{{ department.code }}/">&nbsp; &nbsp; {{ department.name }}</a></li>
+                    {% endfor %}
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#servers" class="collapsed">
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> Servers <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="servers">
+                  <li><a href="/servers/">All Servers</a></li>
+                    {% for servertype in servertypes %}
+                        <li><a href="/servers/by_type/{{ servertype.id }}/">&nbsp; &nbsp; {{ servertype.type }}</a></li>
+                    {% endfor %}
+                </ul>
+
+                <li>
+                  <a href="/printers/">
+                  <i class="fa fa-print fa-lg"></i> Printers
+                  </a>
+                </li>
+
+                <li data-toggle="collapse" data-target="#ports" class="collapsed">
+                  <a href="#"><i class="fa fa-plug fa-lg"></i> Ports <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="ports">
+                  <li><a href="/ports/">All Ports</a></li>
+                    {% for building in buildings %}
+                        <li><a href="/ports/{{ building.code }}/">&nbsp; &nbsp; {{ building.building }}</a></li>
+                    {% endfor %}
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#status" class="collapsed">
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> Status <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="status">
+                    {% for status in status_type %}
+                        <li><a href="/status/by_status/{{ status.id }}/">&nbsp; &nbsp; {{ status.Status }}</a></li>
+                    {% endfor %}
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <a href="#"><i class="fa fa-plus-square fa-lg"></i> New <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                  <li><a href="/device/add/">&nbsp; &nbsp; Computer</a></li>
+                  <li><a href="/servers/add/">&nbsp; &nbsp; Server</a></li>
+                    <li><a href="/printers/add/">&nbsp; &nbsp; Printer</a></li>
+		            <li><a href="/ports/add/">&nbsp; &nbsp; Ports</a></li>
+                </ul>
+
+                <li data-toggle="collapse" data-target="#admin" class="collapsed">
+                  <a href="#"><i class="fa fa-globe fa-lg"></i>Admin<span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="admin">
+		    <li><a href="/admin/">&nbsp; &nbsp; Admin</a></li>
+                    <li><a href="/os/">&nbsp; &nbsp; Add OS</a></li>
+                    <li><a href="/type/">&nbsp; &nbsp; Add Computer Type</a></li>
+                    <li><a href="/status/">&nbsp; &nbsp; Add Status</a></li>
+                    <li><a href="/servertypes/">&nbsp; &nbsp; Add Server Type</a></li>
+                    <li><a href="/departments/">&nbsp; &nbsp; Add Department</a></li>
+                    <li><a href="/building/add/">&nbsp; &nbsp; Add Building</a></li>
+                </ul>
+                <li>
+                  <a target="_blank" href="http://172.19.20.25/notes/">
+                  <i class="fa fa-sticky-note fa-lg"></i>Cisco Notes
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://172.19.40.41:88/">
+                  <i class="fa fa-sticky-note fa-lg"></i>Outage Viewer
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://n124.meraki.com/login/dashboard_login?go=%2FMeraki-Wireless%2Fn%2FvqaNidzb%2Fmanage%2Fdashboard&sh=124">
+                  <i class="fa fa-sticky-note fa-lg"></i>Meraki Dashboard
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://172.19.24.7:7080/swg/#/groups">
+                  <i class="fa fa-sticky-note fa-lg"></i>iBoss
+                  </a>
+                </li>
+				<li>
+                  <a target="_blank" href="http://172.19.40.12">
+                  <i class="fa fa-sticky-note fa-lg"></i>City Hall Keycard
+                  </a>
+                </li>
+            </ul>
+     </div>
+</div>

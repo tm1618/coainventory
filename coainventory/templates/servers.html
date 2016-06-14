@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="text-center">Servers</h3>
+<table id="serverstable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th class="hidecolumn">Role</th>
+            <th class="hidecolumn">IP</th>
+            <th class="servernotescolumn">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for server in servers %}
+            <tr>
+            <td class="idcolumn"><a href="/servers/edit/{{ server.id }}/"> {{ server.Name|lower }} </a></td>
+            <td class="hidecolumn"> {{ server.Role|truncatewords:5 }}</td>
+            <td class="hidecolumn"> {{ server.IP }} </a></td>
+            <td class="servernotescolumn"> {{ server.Notes|truncatewords:5 }} </td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

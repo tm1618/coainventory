@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy PortsForm PortsForm%}
+
+{% block content %}
+
+<div class="text-left">
+<h3>Add Port</h3>
+
+<form action="/ports/add/" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input type="submit" name="submit" value="Submit">
+
+{% if messages %}
+    {% for message in messages %}
+        <h4> {{ message }} </h4>
+    {% endfor %}
+{% endif %}
+
+
+</form>
+
+</div>
+
+{% endblock %}

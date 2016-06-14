@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy ServerForm %}
+
+{% block content %}
+<a class="btn btn-primary" href="/servers/">Back to Servers</a>
+<div class="text-left">
+<h3>Edit Server</h3>
+
+<form action="" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input type="submit" name="submit" value="Submit">
+
+
+</form>
+
+</div>
+
+{% endblock %}

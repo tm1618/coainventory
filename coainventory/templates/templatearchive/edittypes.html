@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% crispy TypeForm %}
+
+{% block content %}
+<div class="text-center">
+<h3>Edit Types</h3>
+
+<form action="" method="post">{% csrf_token %}
+
+{{ form|crispy }}
+
+<br />
+<input type="submit" name="submit" value="Submit">
+
+
+</form>
+    <br />
+{% for type in types %}
+
+<table border="1" class="text-center locationtable">
+
+    <tr>
+        <td style="width: 200px"> <a href="/types/edit/{{ type.id }}">{{ type }}</a></td>
+
+    </tr>
+
+</table>
+
+{% endfor %}
+    <br /><br />
+    <a href="/status/"><----Back to Type List </a>
+
+
+</div>
+
+{% endblock %}

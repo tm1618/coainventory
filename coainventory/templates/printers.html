@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="text-center">Printer List</h3>
+<table id="printerstable">
+    <thead>
+        <tr>
+            <th class="idColumn">Name</th>
+            <th class="printerLocationColumn">Location</th>
+            <th class="hidecolumn brandColumn">Brand</th>
+            <th class="hidecolumn modelColumn">Model</th>
+            <th class="IPColumn">IP</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for printer in printers %}
+            <tr>
+            <td class="idcolumn"> <strong><a href="/printers/edit/{{ printer.id }}/"> {{ printer.Name }} </a> </strong></td>
+            <td class="printerLocationColumn"> {{ printer.Location }}</td>
+            <td class="hidecolumn brandColumn" > {{ printer.Brand }} </td>
+            <td class="hidecolumn modelColumn" > {{ printer.Model }}</td>
+            <td class="IPColumn" ><a href="http://{{ printer.IP }}" target="_blank"> {{ printer.IP }} </a></td>
+
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

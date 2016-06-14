@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a class="btn btn-primary" href="/device/edit/{{ history.id }}/">Back</a>
+
+<h2>History Details</h2>
+
+<p><strong>Computer ID:</strong> {{ history.UniqueID }}</p>
+<p><strong>Date Changed</strong> {{ history.history_date|date:"SHORT_DATE_FORMAT" }}</p>
+<p><strong>User:</strong> {{ history.User }}</p>
+<p><strong>Department:</strong> {{ history.Department }}</p>
+<p><strong>Location:</strong> {{ history.Location }}</p>
+<p><strong>Type:</strong> {{ history.Type }}</p>
+<p><strong>OS:</strong> {{ history.OS }}</p>
+<p><strong>Status:</strong> {{ history.Status }}</p>
+<p><strong>Notes:</strong> {{ history.Notes }}</p>
+
+{% endblock %}

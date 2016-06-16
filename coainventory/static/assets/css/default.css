@@ -122,6 +122,10 @@ html, body {
     display: none;
 }
 
+#devicestable {
+width: 100%;
+}
+
 #devicestable, td{
     font-size: 1em;
     text-align:left;
@@ -377,6 +381,9 @@ hr {
     border-radius: 5px;
     padding-bottom: 70px;
     float:right;
+    margin-right: 40px;
+    margin-left; 300px;
+    width: calc(100% - 340px);
 }
 
 .sortlist a {
@@ -506,6 +513,12 @@ hr {
 
 
 @media (max-width: 767px) {
+
+    .mainwrapper {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
   .nav-side-menu {
     position: relative;
     width: 100%;

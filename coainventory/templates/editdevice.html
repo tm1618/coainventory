@@ -45,7 +45,7 @@
             </tr>
          <tr>
                 <td><strong>Notes</strong></td>
-                <td>{{ device.Notes }}</td>
+                <td>{{ device.Notes|truncatechars:30 }}</td>
             </tr>
 
         </tbody>
@@ -70,7 +70,7 @@
                 <td><a href="/device/history/{{ i.history_id }}/">{{ i.history_date |date:"SHORT_DATE_FORMAT" }}</a> </td>
                 <td class="hidecolumn">{{ i.OS }}</td>
                 <td class="hidecolumn">{{ i.Status }}</td>
-                <td>{{ i.Notes|truncatewords:5 }} </td>
+                <td>{{ i.Notes|truncatechars:40 }} </td>
             </tr>
         {% endfor %}
         </tbody>

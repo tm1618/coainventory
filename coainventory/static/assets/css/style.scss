@@ -92,16 +92,18 @@ html, body {
 /**********************************************************************/
 /* Dashbox Styles */
 	.dashbox-container {
-	  margin-right: 30px;
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+	  	margin-left: 20px;
 	}
 
 	.dashbox {
 	    height: 170px;
 	    width: 190px;
-	    margin-left: 8%;
 	    border: 2px solid black;
 	    border-radius: 5px;
-	    margin-bottom: 40px;
+	    margin: 20px 10px 20px 10px;
 	    box-shadow: 10px 10px 5px #888888;
 	    transition: 0.3s ease-in-out 0s;
 	}
@@ -144,10 +146,6 @@ html, body {
 
 	}
 
-	.dashboard-content {
-	  display: flex;
-	  justify-content: center;
-	}
 
 	.home-title {
 		text-shadow: 1px 1px 1px black;
@@ -188,15 +186,6 @@ html, body {
 	    font-weight: bold;
 	    text-shadow: 3px 1px 2px black;
 	}
-
-	.dashcontainer {
-	    width: 85%;
-
-	    margin: 0 auto;
-	    border: 1px solid black;
-	    border-radius: 5px;
-	}
-
 /* End Dashbox Styles */
 /**********************************************************************/
 /* Navbar Styles */
@@ -486,15 +475,17 @@ html, body {
 	  }
 
 	  .dashbox {
-	    font-size: .7em;
 	    display: inline-block;
-	    height: 130px;
-	    width: 160px;
-	    margin-left: 20px;
+	    width: calc(100vw - 40px);
+	    height: 125px;
+	    margin: 10px 0;
 	  }
+
 	  .dashbox-container {
-	    margin-right: 0;
+		justify-content: center;
+	  	margin: 0;
 	  }
+	  
 	}
 /* End Media Query - Under 767px */
 /**********************************************************************/
@@ -521,10 +512,6 @@ html, body {
 	    }
 	    .hidecolumn, .servernotescolumn {
 	        display: none;
-	    }
-	    .dashbox {
-			display: inline-block;
-			margin-left: 20px;
 	    }
 	}
 /* End Media Query - Under 1050px */

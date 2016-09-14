@@ -39,7 +39,7 @@ def home(request):
 
 @login_required()
 def alldevices(request):
-    devices = Device.objects.all()
+    devices = Device.objects.exclude(Status__Status="Retired")
     total = Device.objects.count()
     a = datetime.now()
 

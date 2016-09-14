@@ -3,7 +3,7 @@
 {% crispy DeviceForm %}
 
 {% block content %}
-<a class="btn btn-primary btn-arrow-left" href="/devices/">Back to Devices</a>
+<a class="btn btn-success btn-arrow-left" href="/devices/">Back to Devices</a>
 <div class="row">
 <div class="col-lg-4 col-md-5">
     <h3>{{ device.UniqueID }} <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#device_edit">Edit Device</button></h3>
@@ -93,7 +93,7 @@
             {{ form|crispy }}
 
             <input type="submit" class="btn btn-primary updateBtn" name="submit" value="Update">
-            <button class="btn btn-primary deleteBtn"><a href="/device/delete/{{ device.id }}/" style="color:white">Delete Device</a></button>
+            <button class="btn btn-danger deleteBtn"><a href="/device/delete/{{ device.id }}/" style="color:white">Delete Device</a></button>
 
             </form>
       </div>

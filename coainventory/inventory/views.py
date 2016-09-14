@@ -125,7 +125,7 @@ def allPrinters(request):
 @login_required()
 def device_set(request, department_code):
 
-    devices = Device.objects.filter(Department__code=department_code)
+    devices = Device.objects.filter(department__code=department_code)
 
     return render(request, 'devices.html', locals())
 

@@ -73,7 +73,7 @@ html, body {
         margin-left: 20px;
     }
 
-    .dashbox1, .dashbox2, .dashbox3, .dashbox4, .dashbox5, .dashbox6 {
+    .dashbox {
       display: inline-block;
       height: 130px;
       width: 160px;
@@ -184,13 +184,15 @@ width: 100%;
 }
 
 
-.dashbox1, .dashbox2, .dashbox3, .dashbox4, .dashbox5, .dashbox6 {
+.dashbox {
     height: 170px;
     width: 190px;
     margin-left: 8%;
     border: 2px solid black;
     border-radius: 5px;
     margin-bottom: 40px;
+    box-shadow: 10px 10px 5px #888888;
+    transition: 0.3s ease-in-out 0s;
 }
 
 .navbar-brand {
@@ -202,10 +204,6 @@ width: 100%;
   justify-content: center;
 }
 
-.dashbox1, .dashbox2, .dashbox3, .dashbox4, .dashbox5, .dashbox6 {
-    box-shadow: 10px 10px 5px #888888;
-    transition: 0.3s ease-in-out 0s;
-}
 
 .dashbox1 {
     background: #418BCA;
@@ -231,7 +229,11 @@ width: 100%;
     background: rgba(255, 255, 0, 0.5);
 }
 
-.dashbox1:hover, .dashbox2:hover, .dashbox3:hover, .dashbox4:hover, .dashbox5:hover, .dashbox6:hover {
+.dashbox7 {
+  background: #5DB85B;
+}
+
+.dashbox:hover {
     transition: 0.3s ease-in-out 0s;
      transform: scale(1.05, 1.05);
      -moz-transform: scale(1.05, 1.05);
@@ -520,7 +522,7 @@ hr {
     width: 20px;
   }
 
-  .dashbox1, .dashbox2, .dashbox3, .dashbox4, .dashbox5, .dashbox6 {
+  .dashbox {
     font-size: .7em;
     display: inline-block;
     height: 130px;

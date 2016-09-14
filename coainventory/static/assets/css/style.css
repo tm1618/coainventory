@@ -417,12 +417,18 @@ hr {
   .dashbox {
     display: inline-block;
     width: calc(100vw - 40px);
-    height: 125px;
+    height: 92px;
     margin: 10px 0; }
 
   .dashbox-container {
     justify-content: center;
-    margin: 0; } }
+    margin: 0; }
+
+  .dashtitle {
+    font-size: 2em; }
+
+  .dashnumber {
+    font-size: 1.5em; } }
 /* End Media Query - Under 767px */
 /**********************************************************************/
 /* Media Query - Under 737px */

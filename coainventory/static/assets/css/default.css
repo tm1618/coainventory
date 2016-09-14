@@ -196,6 +196,7 @@ width: 100%;
 
 .dashbox1, .dashbox2, .dashbox3, .dashbox4, .dashbox5, .dashbox6 {
     box-shadow: 10px 10px 5px #888888;
+    transition: 0.3s ease-in-out 0s;
 }
 
 .dashbox1 {
@@ -222,54 +223,15 @@ width: 100%;
     background: #FFFF00
 }
 
-.dashbox1:hover {
+.dashbox1:hover, .dashbox2:hover, .dashbox3:hover, .dashbox4:hover, .dashbox5:hover, .dashbox6:hover {
+    transition: 0.3s ease-in-out 0s;
      transform: scale(1.1, 1.1);
      -moz-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1);
     -webkit-transform: scale(1.1, 1.1);
     -o-transform: scale(1.1, 1.1);
-}
 
-.dashbox2:hover {
-     transform: scale(1.1, 1.1);
-     -moz-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
-    -o-transform: scale(1.1, 1.1);
 }
-
-.dashbox3:hover {
-     transform: scale(1.1, 1.1);
-     -moz-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
-    -o-transform: scale(1.1, 1.1);
-}
-
-.dashbox4:hover {
-     transform: scale(1.1, 1.1);
-     -moz-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
-    -o-transform: scale(1.1, 1.1);
-}
-
-.dashbox5:hover {
-     transform: scale(1.1, 1.1);
-     -moz-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
-    -o-transform: scale(1.1, 1.1);
-}
-
-.dashbox6:hover {
-     transform: scale(1.1, 1.1);
-     -moz-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    -webkit-transform: scale(1.1, 1.1);
-    -o-transform: scale(1.1, 1.1);
-}
-
 
 .dashtitle1, .dashtitle2, .dashtitle3, .dashtitle4, .dashtitle5, .dashtitle6 {
     font-size: 2.2em;

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.admin import widgets
-from models import Device, OS, Type, Status, Printer, Server, Ticket, Department, ServerType, Ports, Building
+from models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Fieldset, MultiField, Field, Div, ButtonHolder, HTML
 
@@ -15,7 +15,7 @@ class DeviceForm(forms.ModelForm):
                                            'cols':30,
                                            'style':'max-width:230px;'}),
         }
-        fields = ('UniqueID', 'User', 'Department', 'Location', 'Type', 'OS', 'Date', 'Status', 'Notes')
+        fields = ('UniqueID', 'User', 'department', 'Location', 'Type', 'OS', 'Date', 'Status', 'Notes')
 
 
 class PrinterForm(forms.ModelForm):

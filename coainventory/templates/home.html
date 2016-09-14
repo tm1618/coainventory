@@ -2,58 +2,66 @@
 
 {% block content %}
 
-<h1 class="text-center dashtitle">City of Athens IT - Dashboard Test</h1>
-    <hr><br />
+<h1 class="text-center dashtitle">City of Athens IT - Dashboard</h1>
+    <br />
+
+<div class="dashboard-content">
+<div class="row dashbox-container">
+<h3 class="text-center">Hardware</h3>
+<hr>
+        <a href="/devices/">
+            <div class="dashbox1 col-md-4">
+                <p class="dashtitle1 text-center">Computers</p>
+                <hr>
+                <p class="dashnumber text-center">{{ total }}</p>
+            </div>
+        </a>
+
+        <a href="/printers/">
+            <div class="dashbox2 col-md-4">
+                <p class="dashtitle2 text-center">Printers</p>
+                <hr>
+                <p class="dashnumber text-center">{{ printers }}</p>
+            </div>
+        </a>
+
+        <a href="/servers/">
+            <div class="dashbox3 col-md-4">
+                <p class="dashtitle3 text-center">Servers</p>
+                <hr>
+                <p class="dashnumber text-center">{{ servers }}</p>
+            </div>
+        </a>
+</div>
 
 
-<a href="/devices/">
-    <div class="dashbox1 col-md-2">
-        <p class="dashtitle1 text-center">Computers</p>
-        <hr>
-        <p class="dashnumber text-center">{{ total }}</p>
-    </div>
-</a>
+<div class="row">
+<h3 class="text-center">Status Summary</h3>
+<hr>
+    <a href="/devices/changename/">
+        <div class="dashbox4 col-md-4">
+            <p class="dashtitle4 text-center">Rename</p>
+            <hr>
+            <p class="dashnumber text-center">{{ changename }}</p>
+        </div>
+    </a>
 
-<a href="/printers/">
-    <div class="dashbox2 col-md-2">
-        <p class="dashtitle2 text-center">Printers</p>
-        <hr>
-        <p class="dashnumber text-center">{{ printers }}</p>
-    </div>
-</a>
+    <a href="/devices/update/">
+        <div class="dashbox5 col-md-4">
+            <p class="dashtitle5 text-center">Updates</p>
+            <hr>
+            <p class="dashnumber text-center">{{ updates }}</p>
+        </div>
+    </a>
 
-<a href="/servers/">
-    <div class="dashbox3 col-md-2">
-        <p class="dashtitle3 text-center">Servers</p>
-        <hr>
-        <p class="dashnumber text-center">{{ servers }}</p>
-    </div>
-</a>
+    <a href="/devices/inspect/">
+        <div class="dashbox6 col-md-4">
+            <p class="dashtitle6 text-center">Inspect</p>
+            <hr>
+            <p class="dashnumber text-center">{{ inspect }}</p>
+        </div>
+    </a>
+</div>
 
-<div class="clear"></div>
-
-<a href="/devices/changename/">
-    <div class="dashbox4 col-md-2">
-        <p class="dashtitle4 text-center">Rename</p>
-        <hr>
-        <p class="dashnumber text-center">{{ changename }}</p>
-    </div>
-</a>
-
-<a href="/devices/update/">
-    <div class="dashbox5 col-md-2">
-        <p class="dashtitle5 text-center">Updates</p>
-        <hr>
-        <p class="dashnumber text-center">{{ updates }}</p>
-    </div>
-</a>
-
-<a href="/devices/inspect/">
-    <div class="dashbox6 col-md-2">
-        <p class="dashtitle6 text-center">Inspect</p>
-        <hr>
-        <p class="dashnumber text-center">{{ inspect }}</p>
-    </div>
-</a>
-
+</div>
 {% endblock %}

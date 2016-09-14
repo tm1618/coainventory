@@ -8,6 +8,7 @@ html, body {
 }
 
 
+
 @media all and (max-width: 1300px) {
     .servernotescolumn {
             display: none;
@@ -51,12 +52,7 @@ html, body {
     font-size: 1.2em;
 }
 
-.dashbox {
-    background-color: lightgrey;
-    margin: 15px;
-    border: 2px solid black;
-    border-radius: 5px;
-}
+
 
 
 @media all and (max-width: 900px) {
@@ -76,24 +72,31 @@ html, body {
     .mainwrapper {
         margin-left: 20px;
     }
+
     .dashbox1, .dashbox2, .dashbox3, .dashbox4, .dashbox5, .dashbox6 {
-        height: 100px;
-        width: 130px;
-        margin-left: 20%!important;
-        border: 2px solid black;
-        border-radius: 5px;
-        margin-bottom: 40px;
+      display: inline-block;
+      height: 130px;
+      width: 160px;
+      margin-left: 20px;
     }
+   
 }
 
 @media all and (max-width: 737px) {
     .locationColumn {
         display:none;
     }
+
 }
 
+
+/* All Styles */
 .DeviceForm {
     align:left;
+}
+
+.dashbox-container {
+  margin-right: 30px;
 }
 
 
@@ -192,6 +195,11 @@ width: 100%;
 
 .navbar-brand {
     text-shadow: 6px 4px 9px black;
+}
+
+.dashboard-content {
+  display: flex;
+  justify-content: center;
 }
 
 .dashbox1, .dashbox2, .dashbox3, .dashbox4, .dashbox5, .dashbox6 {
@@ -333,7 +341,6 @@ hr {
 
 .mainwrapper {
     height: auto;
-    display: inline-block;
     margin-top: 20px;
     margin-bottom: 20px;
     border: 3px solid black;
@@ -341,11 +348,11 @@ hr {
     background: white;
     box-shadow: 10px 10px 5px black;
     border-radius: 5px;
-    padding-bottom: 70px;
-    float:right;
-    margin-right: 40px;
-    margin-left; 300px;
-    width: calc(100% - 340px);
+    padding-bottom: 30px;
+    width: calc(100vw - 335px);
+    margin-left: 300px;
+    margin-right: 35px;
+
 }
 
 .sortlist a {
@@ -476,11 +483,7 @@ hr {
 
 @media (max-width: 767px) {
 
-    .mainwrapper {
-        width: calc(100% - 40px);
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+    
   .nav-side-menu {
     position: relative;
     width: 100%;
@@ -505,6 +508,28 @@ hr {
     font-size: 22px;
     padding-left: 20px;
     line-height: 50px !important;
+  }
+
+  .mainwrapper {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  #devicestable, td{
+    width: 20px;
+  }
+
+  .dashbox1, .dashbox2, .dashbox3, .dashbox4, .dashbox5, .dashbox6 {
+    font-size: .7em;
+    display: inline-block;
+    height: 130px;
+    width: 160px;
+    margin-left: 20px;
+  }
+
+  .dashbox-container {
+    margin-right: 0;
   }
 }
 @media (min-width: 767px) {

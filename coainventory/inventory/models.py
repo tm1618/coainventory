@@ -17,8 +17,8 @@ class Department(models.Model):
     def __unicode__(self):
         return self.name
 
-    def __str__(self):
-        return self.name
+    def all_devices(self):
+        return self.device_set.all().values()
 
 
 class ServerType(models.Model):
@@ -60,7 +60,7 @@ class Status(models.Model):
     class Meta:
         ordering = ['Status']
 
-    def __str__(self):
+    def __unicode__(self):
         return self.Status
 
 
@@ -98,7 +98,7 @@ class Server(models.Model):
 
 class Device(models.Model):
     UniqueID = models.CharField(max_length=100, unique=True, verbose_name="Computer ID")
-    Department = models.ForeignKey(Department, null=True, blank=True)
+    department = models.ForeignKey(Department, null=True, blank=True)
     Location = models.CharField(max_length=100)
     Type = models.ForeignKey(Type)
     OS = models.ForeignKey(OS)
@@ -112,7 +112,7 @@ class Device(models.Model):
         ordering = ['UniqueID']
 
     def __unicode__(self):
-        return '%s %s' % (self.UniqueID, self.Department)
+        return '%s %s' % (self.UniqueID, self.department)
 
 
 class TicketStatus(models.Model):
